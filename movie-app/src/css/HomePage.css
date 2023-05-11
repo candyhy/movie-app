@@ -1,0 +1,53 @@
+body {
+	background: rgb(20, 18, 18);
+	color: #eee;
+}
+
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
+}
+
+.mainPageHeader {
+	font-size: 90px;
+	font-weight: 600;
+	/* background-image: linear-gradient(to left, #553c9a, #b393d3); */
+	background-image: linear-gradient(to right, #4b4949, #eee);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+.image {
+  flex: 33.33%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.image:hover {
+	cursor: pointer;
+	transform: scale(1.15);
+}
+
+
+.image:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.btn {
+  text-align: left;
+  padding: 12px 40px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
