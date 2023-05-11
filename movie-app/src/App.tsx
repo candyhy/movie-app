@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 const createMovie = async (movie: any) => {
     const 
       title = movie.name,
-      url = `http://www.omdbapi.com/?t=${title}&apikey=263d22d8`,
+      url = `https://www.omdbapi.com/?t=${title}&apikey=263d22d8`,
       res = await fetch(url),
       resJson = await res.json();
   
