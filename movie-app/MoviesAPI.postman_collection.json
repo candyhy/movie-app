@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "e418b8f5-fa1d-4247-9354-9bd7001828ec",
+		"name": "Movies API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17814738"
+	},
+	"item": [
+		{
+			"name": "https://remarkable-bombolone-51a3d9.netlify.app/.netlify/functions/movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://remarkable-bombolone-51a3d9.netlify.app/.netlify/functions/movies",
+					"protocol": "https",
+					"host": [
+						"remarkable-bombolone-51a3d9",
+						"netlify",
+						"app"
+					],
+					"path": [
+						".netlify",
+						"functions",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://www.omdbapi.com/?i=tt3896198&apikey=44e4609b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.omdbapi.com/?apikey=44e4609b&t=deadpool",
+					"protocol": "http",
+					"host": [
+						"www",
+						"omdbapi",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "i",
+							"value": "tt3896198",
+							"disabled": true
+						},
+						{
+							"key": "apikey",
+							"value": "44e4609b"
+						},
+						{
+							"key": "t",
+							"value": "deadpool"
+						}
+					]
+				},
+				"description": "Posters included"
+			},
+			"response": []
+		}
+	]
+}
