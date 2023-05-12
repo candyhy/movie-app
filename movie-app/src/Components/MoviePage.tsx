@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 const MoviePage = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const movie = state.movie;
+    const movie = state.props;
 
     const toMainPage = () => {
         navigate('/');
@@ -21,16 +21,16 @@ const MoviePage = () => {
              <Row xs={1} md={4} className="g-4" style={{display:'flex'}}>
                 <div className='col-4 d-flex justify-content-center text-center'>
                     <Card style={{ width: 'auto', height: 'auto'}}>
-                        <Card.Img variant="top" src={state.movie.Poster} alt='movie' />
+                        <Card.Img variant="top" src={movie.Poster} alt='movie' />
                     </Card>
                 </div>
                 <div className='col-4 d-flex justify-content-left text-left'>
                     <Card bg={'dark'} text={'light'} style={{ width: 'auto', height: 'auto'}}>
                         <Card.Body>
-                            <Card.Title>{movie.name}</Card.Title>
+                            <h5 className="card-title">{movie.name}</h5>
                             <Card.Text>{movie.synopsisShort}</Card.Text>
-                            <Card.Title>Genre: {movie.genre}</Card.Title>
-                            <Card.Title>Production Year: {movie.productionYear}</Card.Title>
+                            <Card.Text>Genre: {movie.genre}</Card.Text>
+                            <Card.Text>Production Year: {movie.productionYear}</Card.Text>
                         </Card.Body>
                     </Card>
                 </div>
