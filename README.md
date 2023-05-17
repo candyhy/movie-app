@@ -10,8 +10,10 @@ Challenge details: https://bluejay.notion.site/Frontend-Movie-630bd50954ff43a3a4
 
 # Deployed App
 - Accessible via `https://movie-app-navy-nu.vercel.app/`
-- API is sometimes unstable, if an undefined poster image is shown, please refresh by reloading webpage or clicking the movies bar at the top
-- UI should look like ![UI](UI.png)
+- API is sometimes unstable, if error view is shown, please select `reload` button  or by click top level movies bar to reload webpage
+- UI should look like ![UI](UI_NEW.png)
+- Movie description page should look like ![movie-page](movie-page.png)
+- Error view should look like ![error-view](error-view.png)
 
 # Limitations
 - Short assignment - Minimal Viable Product due to time constraint. I aimed to finish the project with blocks of free time over the course of 2 days.
@@ -22,6 +24,7 @@ Challenge details: https://bluejay.notion.site/Frontend-Movie-630bd50954ff43a3a4
 - For postman imports: MoviesAPI.postman_collection.json
 
 # NEW Changes
+- Improve code quality and error handling
 - Use of linters: eslint, prettier for better formatting
 - Add error view to replace 'undefined' image when API fails
 - Add loading view 
