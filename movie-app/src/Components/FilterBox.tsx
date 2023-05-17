@@ -1,6 +1,12 @@
 import React from 'react';
 
-const FilterBox = (props: any) => {
+interface FilterBoxProps {
+  filterValue: string;
+  setFilterValue: (value: string) => void;
+  placeHolder: string;
+}
+
+const FilterBox: React.FC<FilterBoxProps> = (props) => {
   return (
     <div className="col col-sm-4">
       <input
@@ -8,9 +14,10 @@ const FilterBox = (props: any) => {
         value={props.filterValue}
         onChange={(event) => props.setFilterValue(event.target.value)}
         placeholder={props.placeHolder}
-      ></input>
+      />
     </div>
   );
 };
 
 export default FilterBox;
+

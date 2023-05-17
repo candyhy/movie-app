@@ -20,3 +20,10 @@ Challenge details: https://bluejay.notion.site/Frontend-Movie-630bd50954ff43a3a4
 
 # API collection
 - For postman imports: MoviesAPI.postman_collection.json
+
+# NEW Changes
+- Use of linters: eslint, prettier for better formatting
+- Add error view to replace 'undefined' image when API fails
+- Add loading view 
+- Reformat movies into chunks of 4 per row with vertical scroll to account for greater scale of movies
+- Add social media share buttons in movie description page to faciliate information sharing

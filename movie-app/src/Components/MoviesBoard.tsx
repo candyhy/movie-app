@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import '../css/MoviesBoard.css';
 
 export type Movie = {
   name: string;
@@ -7,22 +8,22 @@ export type Movie = {
   genre: string;
   synopsisShort: string;
   synopsis: string;
-  image: string;
+  Poster: string;
 };
 
 const MovieBoard = (
-  { props }: any,
-  key: number,
+  { props, id }: any,
   mainPageClickHandler: React.MouseEvent<HTMLDivElement>
 ) => {
   const navigate = useNavigate();
 
   const toMoviePage = () => {
-    navigate('/movie', { state: { props, mainPageClickHandler } });
+    navigate(`/movie/${id}`, { state: { props, mainPageClickHandler } });
   };
 
   return (
-    <div className="image" onClick={toMoviePage} key={key}>
+    <div className="image" onClick={toMoviePage} id={id}>
+      <Link to={`/movie/${id}`}></Link>
       <img src={props.Poster} alt="movie"></img>
     </div>
   );
@@ -53,17 +54,30 @@ const MoviesBoard = (props: any) => {
     });
   }
 
-  return (
-    <>
-      {filteredMovies.map((movie: Movie, index: number) => (
-        <MovieBoard
-          props={movie}
-          key={index}
-          mainPageClickHandler={props.mainPageClickHandler}
-        />
-      ))}
-    </>
-  );
+  const moviesPerRow = 4;
+
+  const renderMovieBoards = () => {
+    const movieLayout = [];
+    for (let i = 0; i < filteredMovies.length; i += moviesPerRow) {
+      movieLayout.push(filteredMovies.slice(i, i + moviesPerRow));
+    }
+
+    return movieLayout.flatMap((movieArr: Movie[], rowIndex: number) => (
+      <div className="row my-4" key={rowIndex}>
+        {movieArr.map((movie: Movie, colIndex: number) => (
+          <div className="movies-spacing" key={colIndex}>
+            <MovieBoard
+              props={movie}
+              mainPageClickHandler={props.mainPageClickHandler}
+              id={`${rowIndex}_${colIndex}`}
+            />
+          </div>
+        ))}
+      </div>
+    ));
+  };
+
+  return <>{renderMovieBoards()}</>;
 };
 
 export default MoviesBoard;
