@@ -28,30 +28,32 @@ const MoviePage = () => {
 
   const shareMovie = <T extends string>(platform: T) => {
     const shareTitle = movie.name;
-    const shareUrl = window.location.href;
+    const emptyUrl = " ";
+    const shareText = `Check out this movie:\n\n${shareTitle}\n\n${movie.synopsisShort}\n\nGenre: ${movie.genre}\nProduction Year: ${movie.productionYear}`;
+
   
     switch (platform) {
       case 'facebook':
         return (
-          <FacebookShareButton url={shareUrl} quote={shareTitle}>
+          <FacebookShareButton url={emptyUrl} quote={shareText}>
             <FacebookIcon size={32} round={true}/>
           </FacebookShareButton>
         );
       case 'twitter':
         return (
-          <TwitterShareButton url={shareUrl} title={shareTitle}>
+          <TwitterShareButton url={emptyUrl} title={shareText}>
             <TwitterIcon size={32} round={true}/>
           </TwitterShareButton>
         );
       case 'whatsapp':
         return (
-          <WhatsappShareButton url={shareUrl} title={shareTitle}>
+          <WhatsappShareButton url={emptyUrl} title={shareText}>
             <WhatsappIcon size={32} round={true}/>
           </WhatsappShareButton>
         );
         case 'telegram':
         return (
-          <TelegramShareButton url={shareUrl} title={shareTitle}>
+          <TelegramShareButton url={emptyUrl} title={shareText}>
             <TelegramIcon size={32} round={true}/>
           </TelegramShareButton>
         );

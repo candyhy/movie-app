@@ -12,19 +12,20 @@ export type Movie = {
 };
 
 const MovieBoard = (
-  { props, id }: any,
+  { props }: any,
   mainPageClickHandler: React.MouseEvent<HTMLDivElement>
 ) => {
   const navigate = useNavigate();
+  const id = encodeURIComponent(props.name);
 
   const toMoviePage = () => {
-    navigate(`/movie/${id}`, { state: { props, mainPageClickHandler } });
+    navigate(`/movie/${id}`, { state: { props, mainPageClickHandler, id } });
   };
 
   return (
-    <div className="image" onClick={toMoviePage} id={id}>
+    <div className="image" onClick={toMoviePage}>
       <Link to={`/movie/${id}`}></Link>
-      <img src={props.Poster} alt="movie"></img>
+      <img src={props.Poster} alt="movie" />
     </div>
   );
 };
@@ -69,7 +70,6 @@ const MoviesBoard = (props: any) => {
             <MovieBoard
               props={movie}
               mainPageClickHandler={props.mainPageClickHandler}
-              id={`${rowIndex}_${colIndex}`}
             />
           </div>
         ))}
